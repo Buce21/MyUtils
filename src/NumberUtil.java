@@ -7,6 +7,6 @@
  */
 public class NumberUtil {
     boolean isNumber(String str){
-        return false;
+        return true;
     }
 }
