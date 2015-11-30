@@ -9,11 +9,8 @@ import static org.junit.Assert.assertEquals;
  */
 public class StringUtilTest {
 
-    StringUtil stringUtil ;
-    @Before
-    public void initStringUtil(){
-        stringUtil = new StringUtil();
-    }
+
+
     @Test
     public void isEmptyTest(){
         assertEquals(StringUtil.isEmpty("a"),false);
@@ -78,8 +75,62 @@ public class StringUtilTest {
         assertEquals(StringUtil.trimToNull(" "),null);
         assertEquals(StringUtil.trimToNull("co me"),"come");
     }
-    @After
-    public void closeStringUtil() {
-        stringUtil = null;
+
+    @Test
+    public void testTrim() throws Exception {
+        assertEquals(StringUtil.trim(""),"");
+        assertEquals(StringUtil.trim(null),null);
+        assertEquals(StringUtil.trim("co me"),"come");
+    }
+
+    @Test
+    public void testTrimToEmpty() throws Exception {
+        assertEquals(StringUtil.trimToEmpty(null),"");
+        assertEquals(StringUtil.trimToEmpty("co me"),"come");
+    }
+
+    @Test
+    public void testEqualsValueLength() throws Exception {
+        assertEquals(StringUtil.equalsValueLength("abc","bcd"),true);
+    }
+
+    @Test
+    public void testIndexOf() throws Exception {
+        assertEquals(StringUtil.indexOf("abc",'c'),2);
+        assertEquals(StringUtil.indexOf("abc",'d'),-1);
+    }
+
+    @Test
+    public void testIndexOf1() throws Exception {
+        assertEquals(StringUtil.indexOf("banana",'a',5),0);
+        assertEquals(StringUtil.indexOf("banana",'a',6),-1);
+    }
+
+    @Test
+    public void testJoin() throws Exception {
+        CharSequence[] charSequences = {null, "", "a"};
+        assertEquals(StringUtil.join(charSequences,","),",,a");
+    }
+
+    @Test
+    public void testJoin1() throws Exception {
+        CharSequence[] charSequences = {null, "", "a"};
+        assertEquals(StringUtil.join(charSequences,","),",,a");
+    }
+
+    @Test
+    public void testJoin2() throws Exception {
+        String[] strings = {"ab","cd","",null};
+        assertEquals(StringUtil.join(strings),"abcd");
+    }
+
+    @Test
+    public void testLeft() throws Exception {
+        assertEquals(StringUtil.left("abcde",2),"ab");
+    }
+
+    @Test
+    public void testRight() throws Exception {
+        assertEquals(StringUtil.right("abcde",2),"cde");
     }
 }
