@@ -1,5 +1,4 @@
-# MyUtils
-My Utils 自定义工具类
+# MyUtils 自定义工具类
 
 StirngUtil - 字符串工具类
 
