@@ -320,6 +320,6 @@ public class NumberUtil {
            d+=num.doubleValue();
             i++;
         }
-        return i/d;
+        return d/i;
     }
 }
