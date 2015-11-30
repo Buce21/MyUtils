@@ -252,4 +252,74 @@ public class NumberUtil {
         return avgNum;
     }
 
+    /**
+     * 求最大值
+     * @param array
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public Number max(Number... array)throws IllegalArgumentException{
+        int i = 0;
+        Number numTemp = 0;
+        for(Number num:array){
+            if(i==0){
+                numTemp = num;
+                i++;
+            }else{
+                if(numTemp.doubleValue()<num.doubleValue()){
+                    numTemp = num;
+                }
+            }
+        }
+        return numTemp;
+    }
+    /**
+     * 求最小值
+     * @param array
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public Number min(Number... array)throws IllegalArgumentException{
+        int i = 0;
+        Number numTemp = 0;
+        for(Number num:array){
+            if(i==0){
+                numTemp = num;
+                i++;
+            }else{
+                if(numTemp.doubleValue()>num.doubleValue()){
+                    numTemp = num;
+                }
+            }
+        }
+        return numTemp;
+    }
+    /**
+     * 求和
+     * @param array
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public Number sum(Number... array)throws IllegalArgumentException{
+        double d = 0d;
+        for(Number num:array){
+           d+=num.doubleValue();
+        }
+        return d;
+    }
+    /**
+     * 求和
+     * @param array
+     * @return
+     * @throws IllegalArgumentException
+     */
+    public Number avg(Number... array)throws IllegalArgumentException{
+        double d = 0d;
+        int i = 0;
+        for(Number num:array){
+           d+=num.doubleValue();
+            i++;
+        }
+        return i/d;
+    }
 }
