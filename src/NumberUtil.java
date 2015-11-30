@@ -200,7 +200,7 @@ public class NumberUtil {
      */
     public double avg(int intArray[]) throws IllegalArgumentException{
          double avgNum =0d;
-         avgNum = intArray.length/this.toDouble(String.valueOf(this.sum(intArray)));
+         avgNum = this.toDouble(String.valueOf(this.sum(intArray)))/intArray.length;
          return avgNum;
     }
 
@@ -212,7 +212,7 @@ public class NumberUtil {
      */
     public double avg(short shorArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = shorArray.length/this.toDouble(String.valueOf(this.sum(shorArray)));
+        avgNum = this.toDouble(String.valueOf(this.sum(shorArray)))/shorArray.length;
         return avgNum;
     }
 
@@ -224,7 +224,7 @@ public class NumberUtil {
      */
     public double avg(float floatArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = floatArray.length/this.toDouble(String.valueOf(this.sum(floatArray)));
+        avgNum = this.toDouble(String.valueOf(this.sum(floatArray)))/floatArray.length;
         return avgNum;
     }
 
@@ -236,7 +236,7 @@ public class NumberUtil {
      */
     public double avg(double doubleArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = doubleArray.length/this.sum(doubleArray);
+        avgNum = this.sum(doubleArray)/doubleArray.length;
         return avgNum;
     }
 
@@ -248,7 +248,7 @@ public class NumberUtil {
      */
     public double avg(long longArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = longArray.length/this.toDouble(String.valueOf(this.sum(longArray)));
+        avgNum = this.toDouble(String.valueOf(this.sum(longArray)))/longArray.length;
         return avgNum;
     }
 

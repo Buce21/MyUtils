@@ -41,10 +41,22 @@ private NumberUtil numberUtil;
     @Test
     public void testSum() throws Exception {
         System.out.println(numberUtil.sum(new int[]{99999999,999999999,999999999}));
+        System.out.println(numberUtil.sum(1,33));
     }
 
     @Test
     public void testAvg() throws Exception {
         System.out.println(numberUtil.avg(new int[]{1,2,3}));
+        System.out.println(numberUtil.avg(1,3,4));
+    }
+
+    @Test
+    public void testMax() throws Exception {
+        System.out.println(numberUtil.max(1,2,3,5,2.0));
+    }
+
+    @Test
+    public void testMin() throws Exception {
+        System.out.println(numberUtil.min(1,2,3,5,2.0));
     }
 }
