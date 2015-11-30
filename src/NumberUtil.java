@@ -10,7 +10,8 @@ import java.util.regex.Pattern;
  */
 public class NumberUtil {
     /**
-     *校验一个字符串能否转成数字
+     * 校验一个字符串能否转成数字
+     * 认为是数字包括所有正负整型，正负浮点型，aE(e)b的科学计数，百分数
      * @param string
      * @return 是数字返回true
      */
