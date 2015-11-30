@@ -10,7 +10,8 @@ import java.util.regex.Pattern;
  */
 public class NumberUtil {
     /**
-     *校验一个字符串能否转成数字
+     * 校验一个字符串能否转成数字
+     * 认为是数字包括所有正负整型，正负浮点型，aE(e)b的科学计数，百分数
      * @param string
      * @return 是数字返回true
      */
@@ -120,12 +121,16 @@ public class NumberUtil {
      * 求和
      * @param intArray
      * @return
+     * @throws IllegalArgumentException
      */
-    public int sum(int[] intArray){
+    public int sum(int[] intArray)throws IllegalArgumentException{
         int sumNum = 0;
-        for(int i:intArray){
-            sumNum+=i;
-        }
+
+            for(int i:intArray){
+                sumNum+=i;
+            }
+
+
         return  sumNum;
     }
 
@@ -133,12 +138,13 @@ public class NumberUtil {
      * 求和
      * @param shortArray
      * @return
+     * @throws IllegalArgumentException
      */
-    public short sum(short[] shortArray){
+    public short sum(short[] shortArray)throws IllegalArgumentException{
         short sumNum = 0;
-        for(short i:shortArray){
-            sumNum+=i;
-        }
+            for(short i:shortArray){
+                sumNum+=i;
+            }
         return sumNum;
     }
 
@@ -146,12 +152,13 @@ public class NumberUtil {
      * 求和
      * @param longArray
      * @return
+     * @throws IllegalArgumentException
      */
-    public long sum(long[] longArray) {
+    public long sum(long[] longArray) throws IllegalArgumentException{
         long sumNum = 0l;
-        for (long i : longArray) {
-            sumNum += i;
-        }
+            for (long i : longArray) {
+                sumNum += i;
+            }
         return sumNum;
     }
 
@@ -159,12 +166,15 @@ public class NumberUtil {
      * 求和
      * @param floatArray
      * @return
+     * @throws IllegalArgumentException
      */
-    public float sum(float[] floatArray){
+    public float sum(float[] floatArray) throws IllegalArgumentException{
         float sumNum = 0f;
-        for (float i:floatArray){
-            sumNum+=i;
-        }
+
+            for (float i:floatArray){
+                sumNum+=i;
+            }
+
         return sumNum;
     }
 
@@ -172,16 +182,74 @@ public class NumberUtil {
      * 求和
      * @param doubleArray
      * @return
+     * @throws IllegalArgumentException
      */
-    public double sum(double[] doubleArray){
+    public double sum(double[] doubleArray) throws IllegalArgumentException{
         double sumNum = 0d;
-        for (double i:doubleArray){
-            sumNum+=i;
-        }
+            for (double i:doubleArray){
+                sumNum+=i;
+            }
         return  sumNum;
     }
-    // TODO: 2015/11/27
-    public <T> T avg (T[] t){
-        return t[0];
+
+    /**
+     * 求平均值
+     * @param intArray
+     * @return double
+     * @throws IllegalArgumentException
+     */
+    public double avg(int intArray[]) throws IllegalArgumentException{
+         double avgNum =0d;
+         avgNum = intArray.length/this.toDouble(String.valueOf(this.sum(intArray)));
+         return avgNum;
     }
+
+    /**
+     * 求平均值
+     * @param shorArray
+     * @return double
+     * @throws IllegalArgumentException
+     */
+    public double avg(short shorArray[]) throws IllegalArgumentException{
+        double avgNum =0d;
+        avgNum = shorArray.length/this.toDouble(String.valueOf(this.sum(shorArray)));
+        return avgNum;
+    }
+
+    /**
+     * 求平均值
+     * @param floatArray
+     * @return double
+     * @throws IllegalArgumentException
+     */
+    public double avg(float floatArray[]) throws IllegalArgumentException{
+        double avgNum =0d;
+        avgNum = floatArray.length/this.toDouble(String.valueOf(this.sum(floatArray)));
+        return avgNum;
+    }
+
+    /**
+     * 求平均值
+     * @param doubleArray
+     * @return double
+     * @throws IllegalArgumentException
+     */
+    public double avg(double doubleArray[]) throws IllegalArgumentException{
+        double avgNum =0d;
+        avgNum = doubleArray.length/this.sum(doubleArray);
+        return avgNum;
+    }
+
+    /**
+     * 求平均值
+     * @param longArray
+     * @return double
+     * @throws IllegalArgumentException
+     */
+    public double avg(long longArray[]) throws IllegalArgumentException{
+        double avgNum =0d;
+        avgNum = longArray.length/this.toDouble(String.valueOf(this.sum(longArray)));
+        return avgNum;
+    }
+
 }
