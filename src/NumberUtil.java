@@ -194,43 +194,43 @@ public class NumberUtil {
     /**
      * 求平均值
      * @param intArray
-     * @return
+     * @return double
      * @throws IllegalArgumentException
      */
     public double avg(int intArray[]) throws IllegalArgumentException{
          double avgNum =0d;
-         avgNum = intArray.length/this.sum(intArray);
+         avgNum = intArray.length/this.toDouble(String.valueOf(this.sum(intArray)));
          return avgNum;
     }
 
     /**
      * 求平均值
      * @param shorArray
-     * @return
+     * @return double
      * @throws IllegalArgumentException
      */
     public double avg(short shorArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = shorArray.length/this.sum(shorArray);
+        avgNum = shorArray.length/this.toDouble(String.valueOf(this.sum(shorArray)));
         return avgNum;
     }
 
     /**
      * 求平均值
      * @param floatArray
-     * @return
+     * @return double
      * @throws IllegalArgumentException
      */
     public double avg(float floatArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = floatArray.length/this.sum(floatArray);
+        avgNum = floatArray.length/this.toDouble(String.valueOf(this.sum(floatArray)));
         return avgNum;
     }
 
     /**
      * 求平均值
      * @param doubleArray
-     * @return
+     * @return double
      * @throws IllegalArgumentException
      */
     public double avg(double doubleArray[]) throws IllegalArgumentException{
@@ -242,12 +242,12 @@ public class NumberUtil {
     /**
      * 求平均值
      * @param longArray
-     * @return
+     * @return double
      * @throws IllegalArgumentException
      */
     public double avg(long longArray[]) throws IllegalArgumentException{
         double avgNum =0d;
-        avgNum = longArray.length/this.sum(longArray);
+        avgNum = longArray.length/this.toDouble(String.valueOf(this.sum(longArray)));
         return avgNum;
     }
 
